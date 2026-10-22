@@ -463,6 +463,18 @@ textarea{resize:vertical;min-height:88px}
 }
 .submit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(167,122,63,.40)}
 .form-note{font-size:11px;color:#7d8d9d;text-align:center;margin-top:14px;font-family:"PingFang SC",sans-serif;line-height:1.7}
+.direct-line{
+  margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.10);
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+  font-size:12px;font-family:"PingFang SC",sans-serif;color:#8b9aab;
+}
+.direct-line > span{margin-right:2px}
+.direct-line a{
+  color:var(--gold-l);border:1px solid rgba(217,179,130,.35);
+  padding:4px 10px;border-radius:5px;font-size:12px;
+  transition:background .2s,border-color .2s;
+}
+.direct-line a:hover{background:rgba(217,179,130,.14);border-color:rgba(217,179,130,.6)}
 .ok-msg{
   display:none;background:rgba(183,138,76,.14);border:1px solid rgba(183,138,76,.4);
   border-radius:8px;padding:14px;font-size:13.5px;color:#e8d6b8;text-align:center;
@@ -1026,32 +1038,38 @@ footer{background:#07111c;color:#7d8b9a;padding:56px 0 0;font-family:"PingFang S
       </div>
 
       <div class="reveal">
-        <form id="leadForm">
+        <form id="leadForm" action="https://formsubmit.co/beihai1368@gmail.com" method="POST">
           <h3>预约免费咨询</h3>
           <p>填写后我们会在一个工作日内回复，安排合适的顾问对接。</p>
+          <!-- FormSubmit 配置 -->
+          <input type="hidden" name="_subject" value="【新咨询】贝海国际官网 — 客户预约">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://kinki288-prog.github.io/beihai-corp/?sent=1">
+          <input type="text" name="_honey" style="display:none">
           <div class="f-row">
             <div class="field">
               <label>称呼 <i>*</i></label>
-              <input type="text" placeholder="陈先生 / 李小姐" required>
+              <input type="text" name="称呼" placeholder="陈先生 / 李小姐" required>
             </div>
             <div class="field">
               <label>联络电话 <i>*</i></label>
-              <input type="tel" placeholder="+86 / +852 / +853" required>
+              <input type="tel" name="联络电话" placeholder="+86 / +852 / +853" required>
             </div>
           </div>
           <div class="f-row">
             <div class="field">
               <label>微信 / WhatsApp</label>
-              <input type="text" placeholder="微信号或 WhatsApp">
+              <input type="text" name="微信或WhatsApp" placeholder="微信号或 WhatsApp">
             </div>
             <div class="field">
               <label>所在城市</label>
-              <input type="text" placeholder="例如：深圳">
+              <input type="text" name="所在城市" placeholder="例如：深圳">
             </div>
           </div>
           <div class="field">
             <label>你想了解 <i>*</i></label>
-            <select required>
+            <select name="咨询项目" required>
               <option value="">请选择</option>
               <option>香港公司注册</option>
               <option>澳门公司注册</option>
@@ -1064,11 +1082,16 @@ footer{background:#07111c;color:#7d8b9a;padding:56px 0 0;font-family:"PingFang S
           </div>
           <div class="field">
             <label>简述你的情况</label>
-            <textarea placeholder="例如：经营跨境电商，需要香港公司收款，已有两次开户被拒纪录……"></textarea>
+            <textarea name="情况简述" placeholder="例如：经营跨境电商，需要香港公司收款，已有两次开户被拒纪录……"></textarea>
           </div>
           <button type="submit" class="submit">提交，预约顾问</button>
           <div class="form-note">我们仅将资料用于本次咨询联系，不会转交第三方或用于推销。</div>
           <div class="ok-msg" id="okMsg">已收到你的资料，我们会在一个工作日内与你联系。</div>
+          <div class="direct-line">
+            <span>想更快回复？直接联系我</span>
+            <a href="https://wa.me/85366866986" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="javascript:void(0)" class="wx-copy" data-wx="Zzkk240724">微信 Zzkk240724</a>
+          </div>
         </form>
       </div>
     </div>
@@ -1158,13 +1181,31 @@ document.querySelectorAll('.wx-copy').forEach(function(el){
   });
 });
 
-// Form
-document.getElementById('leadForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  document.getElementById('okMsg').style.display = 'block';
-  this.querySelector('.submit').textContent = '已提交';
-  this.querySelector('.submit').style.opacity = '.7';
+// Form：真实提交到 FormSubmit，仅做重复点击防护
+document.getElementById('leadForm').addEventListener('submit', function(){
+  var btn = this.querySelector('.submit');
+  btn.textContent = '正在提交…';
+  btn.style.opacity = '.7';
+  btn.style.pointerEvents = 'none';
+  setTimeout(function(){
+    btn.textContent = '提交，预约顾问';
+    btn.style.opacity = '';
+    btn.style.pointerEvents = '';
+  }, 12000);
 });
+
+// 提交成功后从 ?sent=1 返回：展示成功提示并滚动到表单
+(function(){
+  if(new URLSearchParams(location.search).get('sent') === '1'){
+    var ok = document.getElementById('okMsg');
+    var form = document.getElementById('leadForm');
+    if(ok && form){
+      ok.style.display = 'block';
+      ok.textContent = '提交成功！我们已收到你的资料，会在一个工作日内与你联系。';
+      setTimeout(function(){ form.scrollIntoView({behavior:'smooth', block:'center'}); }, 300);
+    }
+  }
+})();
 </script>
 </body>
 </html>
