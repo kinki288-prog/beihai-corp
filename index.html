@@ -15,21 +15,23 @@
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="贝海国际秘书服务有限公司 | 港澳公司注册・银行开户">
-<meta name="theme-color" content="#10263d">
+<meta name="theme-color" content="#0d3049">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%230d364f'/%3E%3Cpath d='M20 7c-5.6 0-10.2 4.3-11 9.8-.1.5.3 1 .9 1h20.2c.6 0 1-.5.9-1C30.2 11.3 25.6 7 20 7Z' fill='%233FBED6'/%3E%3Cpath d='M8 25.6c2.3-1.9 4.6-1.9 6.9 0 2.3 1.9 4.6 1.9 6.9 0 2.3-1.9 4.6-1.9 6.9 0' stroke='%237FD3E3' stroke-width='2.6' stroke-linecap='round' fill='none'/%3E%3Cpath d='M10 31c2-1.6 4-1.6 6 0 2 1.6 4 1.6 6 0 2-1.6 4-1.6 6 0' stroke='%232BB3CC' stroke-width='2' stroke-linecap='round' fill='none' opacity='.65'/%3E%3C/svg%3E">
+
 <style>
 :root{
-  --ink:#0d1b2a;
-  --ink-2:#1b2e42;
-  --navy:#10263d;
-  --gold:#b78a4c;
-  --gold-l:#d9b382;
-  --gold-grad:linear-gradient(135deg,#c79a5c 0%,#a87a3f 100%);
-  --bg:#f7f5f1;
+  --ink:#0a2130;
+  --ink-2:#12384c;
+  --navy:#0d3049;
+  --gold:#1a9bb5;
+  --gold-l:#7fd3e3;
+  --gold-grad:linear-gradient(135deg,#2bb3cc 0%,#1587a3 100%);
+  --bg:#f4f9fa;
   --card:#ffffff;
-  --line:#e6e1d8;
-  --muted:#6b7785;
-  --shadow-sm:0 1px 2px rgba(13,27,42,.06),0 4px 14px rgba(13,27,42,.05);
-  --shadow-md:0 8px 32px rgba(13,27,42,.10);
+  --line:#dcebef;
+  --muted:#63798a;
+  --shadow-sm:0 1px 2px rgba(10,33,48,.06),0 4px 14px rgba(10,33,48,.05);
+  --shadow-md:0 8px 32px rgba(10,33,48,.10);
   --radius:14px;
   --max:1180px;
 }
@@ -55,11 +57,13 @@ header{
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{
-  width:38px;height:38px;border-radius:9px;background:var(--navy);
-  display:grid;place-items:center;color:#fff;font-weight:700;font-size:17px;
-  letter-spacing:.5px;box-shadow:0 2px 8px rgba(16,38,61,.25);
-  font-family:"Noto Serif SC",serif;
+  width:44px;height:44px;border-radius:11px;
+  background:linear-gradient(160deg,#0e3a54 0%,#0a2840 100%);
+  display:grid;place-items:center;
+  box-shadow:0 3px 12px rgba(10,40,64,.28);
+  flex:0 0 44px;overflow:hidden;position:relative;
 }
+.logo svg{width:32px;height:32px;display:block}
 .brand-txt{display:flex;flex-direction:column;line-height:1.28}
 .brand-txt b{font-size:17.5px;letter-spacing:1.2px}
 .brand-txt span{font-size:10.5px;color:var(--muted);letter-spacing:2.1px;font-family:"PingFang SC",sans-serif}
@@ -78,9 +82,9 @@ nav.links a:hover::after{width:100%}
   transition:transform .18s ease,box-shadow .22s ease,background .2s;
   cursor:pointer;border:1px solid transparent;white-space:nowrap;
 }
-.btn-primary{background:var(--gold-grad);color:#fff;box-shadow:0 4px 16px rgba(167,122,63,.28)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(167,122,63,.36)}
-.btn-ghost{background:transparent;color:var(--navy);border-color:#cfc8bb}
+.btn-primary{background:var(--gold-grad);color:#fff;box-shadow:0 4px 16px rgba(21,135,163,.28)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(21,135,163,.36)}
+.btn-ghost{background:transparent;color:var(--navy);border-color:#c3dde4}
 .btn-ghost:hover{background:#fff;border-color:var(--gold);color:var(--gold)}
 .btn-dark{background:var(--navy);color:#fff}
 .btn-dark:hover{background:#1a3a58;transform:translateY(-2px)}
@@ -91,7 +95,7 @@ nav.links a:hover::after{width:100%}
 .hero{
   position:relative;overflow:hidden;
   background:
-    radial-gradient(900px 500px at 82% 8%,rgba(183,138,76,.20),transparent 62%),
+    radial-gradient(900px 500px at 82% 8%,rgba(26,155,181,.20),transparent 62%),
     radial-gradient(700px 480px at 6% 92%,rgba(16,38,61,.13),transparent 66%),
     linear-gradient(168deg,#faf8f4 0%,#f1ede5 100%);
   padding:86px 0 92px;
@@ -111,13 +115,13 @@ nav.links a:hover::after{width:100%}
 .eyebrow{
   display:inline-flex;align-items:center;gap:9px;
   padding:7px 16px 7px 12px;border-radius:100px;
-  background:rgba(255,255,255,.78);border:1px solid #e2d9c9;
-  font-size:12.5px;color:#7a5f34;letter-spacing:1.1px;
+  background:rgba(255,255,255,.78);border:1px solid #cfe6ec;
+  font-size:12.5px;color:#146b80;letter-spacing:1.1px;
   font-family:"PingFang SC",sans-serif;margin-bottom:26px;
   box-shadow:var(--shadow-sm);
 }
 .eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--gold);display:block;
-  box-shadow:0 0 0 3px rgba(183,138,76,.18)}
+  box-shadow:0 0 0 3px rgba(26,155,181,.18)}
 h1{
   font-size:clamp(34px,4.3vw,55px);line-height:1.22;font-weight:700;
   letter-spacing:.5px;color:var(--navy);margin-bottom:24px;
@@ -125,7 +129,7 @@ h1{
 h1 em{font-style:normal;color:var(--gold);position:relative;white-space:nowrap}
 h1 em::after{
   content:"";position:absolute;left:0;right:0;bottom:4px;height:9px;
-  background:rgba(183,138,76,.17);z-index:-1;border-radius:2px;
+  background:rgba(26,155,181,.17);z-index:-1;border-radius:2px;
 }
 .hero p.lead{
   font-size:16.5px;color:#4a5866;max-width:540px;line-height:1.95;margin-bottom:34px;
@@ -134,9 +138,9 @@ h1 em::after{
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
 .hero-stats{
   display:grid;grid-template-columns:repeat(3,1fr);gap:0;
-  border-top:1px solid #ddd5c7;padding-top:26px;max-width:520px;
+  border-top:1px solid #cfe6ec;padding-top:26px;max-width:520px;
 }
-.hero-stats div{padding-right:18px;border-right:1px solid #ddd5c7}
+.hero-stats div{padding-right:18px;border-right:1px solid #cfe6ec}
 .hero-stats div:last-child{border:none}
 .hero-stats b{
   font-size:29px;color:var(--navy);font-weight:700;letter-spacing:-.5px;
@@ -159,12 +163,12 @@ h1 em::after{
 }
 .v-main::after{
   content:"";position:absolute;width:280px;height:280px;border-radius:50%;
-  right:-110px;bottom:-120px;background:radial-gradient(circle,rgba(183,138,76,.42),transparent 68%);
+  right:-110px;bottom:-120px;background:radial-gradient(circle,rgba(26,155,181,.42),transparent 68%);
 }
 .v-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2}
 .v-tag{
   font-size:10.5px;letter-spacing:2px;color:var(--gold-l);
-  border:1px solid rgba(217,179,130,.42);padding:5px 11px;border-radius:4px;
+  border:1px solid rgba(127,211,227,.42);padding:5px 11px;border-radius:4px;
   font-family:"PingFang SC",sans-serif;
 }
 .v-flag{display:flex;gap:5px}
@@ -192,7 +196,7 @@ h1 em::after{
 }
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 .v-float .ico{
-  width:36px;height:36px;border-radius:9px;background:#f4efe6;
+  width:36px;height:36px;border-radius:9px;background:#eaf6f9;
   display:grid;place-items:center;color:var(--gold);font-size:16px;
 }
 .v-float b{display:block;font-size:13.5px;color:var(--navy);font-family:"PingFang SC",sans-serif}
@@ -229,26 +233,26 @@ h2{font-size:clamp(26px,3vw,36px);line-height:1.35;color:var(--navy);font-weight
   transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s,border-color .3s;
   display:flex;flex-direction:column;
 }
-.svc:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#d9cdb8}
+.svc:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#b9dbe4}
 .svc::before{
   content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold-grad);
   transform:scaleY(0);transform-origin:top;transition:transform .35s;
 }
 .svc:hover::before{transform:scaleY(1)}
 .svc-no{
-  font-size:11px;letter-spacing:2px;color:#b9a888;font-family:"PingFang SC",sans-serif;
+  font-size:11px;letter-spacing:2px;color:#7fa3b0;font-family:"PingFang SC",sans-serif;
   font-weight:600;margin-bottom:16px;
 }
 .svc h3{font-size:20.5px;color:var(--navy);font-weight:700;margin-bottom:12px;letter-spacing:.3px}
 .svc .desc{font-size:14.2px;color:#5f6c7a;line-height:1.85;margin-bottom:20px;flex:1}
-.svc ul{list-style:none;display:flex;flex-direction:column;gap:9px;padding-top:18px;border-top:1px dashed #e7e1d6}
+.svc ul{list-style:none;display:flex;flex-direction:column;gap:9px;padding-top:18px;border-top:1px dashed #e2eef2}
 .svc ul li{
   font-size:13.4px;color:#3f4d5b;display:flex;gap:9px;align-items:flex-start;
   font-family:"PingFang SC",sans-serif;line-height:1.65;
 }
 .svc ul li::before{
   content:"";width:14px;height:14px;flex:0 0 14px;margin-top:4px;border-radius:50%;
-  background:#f6f0e4;border:1px solid #e3d3b8;
+  background:#e8f4f7;border:1px solid #b8dde6;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 24 24' fill='none' stroke='%23a87a3f' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:center;background-size:7px;
 }
@@ -257,7 +261,7 @@ h2{font-size:clamp(26px,3vw,36px);line-height:1.35;color:var(--navy);font-weight
 #why{background:#0c1a2b;color:#fff;position:relative;overflow:hidden}
 #why::before{
   content:"";position:absolute;inset:0;
-  background:radial-gradient(800px 460px at 88% 12%,rgba(183,138,76,.20),transparent 64%),
+  background:radial-gradient(800px 460px at 88% 12%,rgba(26,155,181,.20),transparent 64%),
              radial-gradient(620px 420px at 4% 96%,rgba(58,110,165,.20),transparent 68%);
 }
 #why .wrap{position:relative}
@@ -282,11 +286,11 @@ h2{font-size:clamp(26px,3vw,36px);line-height:1.35;color:var(--navy);font-weight
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:12px}
 .steps::before{
   content:"";position:absolute;top:26px;left:9%;right:9%;height:1px;
-  background:linear-gradient(90deg,transparent,#e0d5c2 12%,#e0d5c2 88%,transparent);
+  background:linear-gradient(90deg,transparent,#cfe6ec 12%,#cfe6ec 88%,transparent);
 }
 .step{text-align:center;padding:0 14px;position:relative}
 .step .dot{
-  width:52px;height:52px;border-radius:50%;background:#fff;border:1.5px solid #e5dbc9;
+  width:52px;height:52px;border-radius:50%;background:#fff;border:1.5px solid #cfe6ec;
   display:grid;place-items:center;margin:0 auto 20px;position:relative;z-index:2;
   font-family:"PingFang SC",sans-serif;font-weight:700;font-size:15px;color:var(--gold);
   transition:all .3s;box-shadow:0 0 0 6px #fff;
@@ -302,15 +306,15 @@ h2{font-size:clamp(26px,3vw,36px);line-height:1.35;color:var(--navy);font-weight
   background:#fff;border:1px solid var(--line);border-radius:var(--radius);
   padding:32px 28px;transition:all .3s;display:flex;flex-direction:column;
 }
-.coop-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:#ddd0b8}
+.coop-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:#b9dbe4}
 .coop-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
 .coop-badge{
   font-size:11px;letter-spacing:1.4px;padding:5px 11px;border-radius:4px;
-  background:#f6f0e4;color:#8a6a38;font-family:"PingFang SC",sans-serif;font-weight:600;
+  background:#e8f4f7;color:#146b80;font-family:"PingFang SC",sans-serif;font-weight:600;
 }
 .coop-card h4{font-size:18px;color:var(--navy);margin-bottom:10px;font-weight:700}
 .coop-card > p{font-size:13.6px;color:#5f6c7a;line-height:1.85;margin-bottom:18px;font-family:"PingFang SC",sans-serif}
-.coop-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:auto;padding-top:16px;border-top:1px dashed #e7e1d6}
+.coop-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:auto;padding-top:16px;border-top:1px dashed #e2eef2}
 .coop-card li{font-size:12.9px;color:#4a5866;font-family:"PingFang SC",sans-serif;display:flex;gap:8px}
 .coop-card li::before{content:"—";color:var(--gold);flex:0 0 auto}
 
@@ -319,13 +323,13 @@ h2{font-size:clamp(26px,3vw,36px);line-height:1.35;color:var(--navy);font-weight
 .adv-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:start}
 .adv-list{display:flex;flex-direction:column;gap:0;margin-top:8px}
 .adv-item{
-  padding:24px 0;border-bottom:1px solid #eee9e0;display:flex;gap:20px;align-items:flex-start;
+  padding:24px 0;border-bottom:1px solid #e2eef2;display:flex;gap:20px;align-items:flex-start;
 }
 .adv-item:first-child{padding-top:0}
 .adv-item:last-child{border-bottom:none}
 .adv-ico{
-  width:44px;height:44px;flex:0 0 44px;border-radius:11px;background:#f7f2e8;
-  display:grid;place-items:center;border:1px solid #efe3cd;
+  width:44px;height:44px;flex:0 0 44px;border-radius:11px;background:#eaf6f9;
+  display:grid;place-items:center;border:1px solid #cde8ee;
 }
 .adv-ico svg{width:21px;height:21px;stroke:var(--gold);fill:none;stroke-width:1.5}
 .adv-item h4{font-size:16px;color:var(--navy);margin-bottom:6px;font-weight:600}
@@ -337,7 +341,7 @@ h2{font-size:clamp(26px,3vw,36px);line-height:1.35;color:var(--navy);font-weight
 }
 .adv-panel::before{
   content:"";position:absolute;width:300px;height:300px;border-radius:50%;
-  top:-140px;right:-100px;background:radial-gradient(circle,rgba(183,138,76,.35),transparent 70%);
+  top:-140px;right:-100px;background:radial-gradient(circle,rgba(26,155,181,.35),transparent 70%);
 }
 .adv-panel h3{font-size:21px;margin-bottom:8px;font-weight:600;position:relative;letter-spacing:.4px}
 .adv-panel > p{font-size:13.4px;color:#a3b1c0;margin-bottom:26px;position:relative;font-family:"PingFang SC",sans-serif}
@@ -356,7 +360,7 @@ h2{font-size:clamp(26px,3vw,36px);line-height:1.35;color:var(--navy);font-weight
   font-family:"PingFang SC",sans-serif;border-top:1px solid rgba(255,255,255,.09);padding-top:16px;
 }
 .center-note{
-  margin-top:34px;padding:16px 20px;border-left:2px solid var(--gold);background:#faf7f1;
+  margin-top:34px;padding:16px 20px;border-left:2px solid var(--gold);background:#f5fbfc;
   font-size:13px;color:#5f6c7a;font-family:"PingFang SC",sans-serif;line-height:1.8;border-radius:0 6px 6px 0;
 }
 
@@ -372,21 +376,21 @@ h2{font-size:clamp(26px,3vw,36px);line-height:1.35;color:var(--navy);font-weight
   font-size:11.5px;color:var(--muted);font-family:"PingFang SC",sans-serif;
   letter-spacing:.8px;margin-bottom:14px;display:flex;gap:8px;align-items:center;
 }
-.case .meta i{width:4px;height:4px;border-radius:50%;display:block;background:#cfc5b3}
+.case .meta i{width:4px;height:4px;border-radius:50%;display:block;background:#a8c9d4}
 .case h4{font-size:16.5px;color:var(--navy);margin-bottom:12px;line-height:1.55;font-weight:600}
 .case p{font-size:13.4px;color:#61707e;line-height:1.85;font-family:"PingFang SC",sans-serif;margin-bottom:16px}
 .case .res{
-  display:flex;gap:0;border-top:1px dashed #e7e1d6;padding-top:16px;
+  display:flex;gap:0;border-top:1px dashed #e2eef2;padding-top:16px;
 }
-.case .res div{flex:1;text-align:center;border-right:1px solid #f0ebe2}
+.case .res div{flex:1;text-align:center;border-right:1px solid #eaf4f7}
 .case .res div:last-child{border-right:none}
 .case .res b{display:block;font-size:17px;color:var(--gold);font-family:"PingFang SC",sans-serif;font-weight:700}
 .case .res span{font-size:10.5px;color:var(--muted);font-family:"PingFang SC",sans-serif}
 
 /* ---------- FAQ ---------- */
 #faq{background:#fff}
-.faq-list{max-width:860px;margin:0 auto;border-top:1px solid #eae4d9}
-.faq-item{border-bottom:1px solid #eae4d9}
+.faq-list{max-width:860px;margin:0 auto;border-top:1px solid #e2eef2}
+.faq-item{border-bottom:1px solid #e2eef2}
 .faq-q{
   width:100%;background:none;border:none;text-align:left;cursor:pointer;
   padding:24px 40px 24px 0;font-size:16px;color:var(--navy);font-weight:600;
@@ -396,7 +400,7 @@ h2{font-size:clamp(26px,3vw,36px);line-height:1.35;color:var(--navy);font-weight
 .faq-q:hover{color:var(--gold)}
 .faq-q::after{
   content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;
-  border-right:1.6px solid #a99b82;border-bottom:1.6px solid #a99b82;
+  border-right:1.6px solid #7fa3b0;border-bottom:1.6px solid #7fa3b0;
   transform:translateY(-70%) rotate(45deg);transition:transform .3s;
 }
 .faq-item.open .faq-q::after{transform:translateY(-30%) rotate(-135deg);border-color:var(--gold)}
@@ -413,7 +417,7 @@ h2{font-size:clamp(26px,3vw,36px);line-height:1.35;color:var(--navy);font-weight
 }
 #contact::before{
   content:"";position:absolute;inset:0;
-  background:radial-gradient(760px 460px at 78% 6%,rgba(183,138,76,.24),transparent 65%);
+  background:radial-gradient(760px 460px at 78% 6%,rgba(26,155,181,.24),transparent 65%);
 }
 #contact .wrap{position:relative}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
@@ -434,7 +438,7 @@ h2{font-size:clamp(26px,3vw,36px);line-height:1.35;color:var(--navy);font-weight
 .cp a{color:#c3cfdb;transition:color .2s}
 .cp a:hover{color:var(--gold-l)}
 .cp .wx-hint{font-style:normal;font-size:10.5px;color:#6f8095;border:1px solid rgba(255,255,255,.14);padding:1px 6px;border-radius:3px;margin-left:6px;letter-spacing:.5px}
-.cp a.wx-copy{font-weight:600;letter-spacing:.6px;border-bottom:1px dashed rgba(217,179,130,.5)}
+.cp a.wx-copy{font-weight:600;letter-spacing:.6px;border-bottom:1px dashed rgba(127,211,227,.5)}
 form{
   background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.11);
   border-radius:16px;padding:34px 32px;backdrop-filter:blur(8px);
@@ -452,16 +456,16 @@ input,select,textarea{
   transition:border-color .2s,background .2s;
 }
 input::placeholder,textarea::placeholder{color:#6e7f91}
-input:focus,select:focus,textarea:focus{border-color:rgba(217,179,130,.65);background:rgba(255,255,255,.10)}
+input:focus,select:focus,textarea:focus{border-color:rgba(127,211,227,.65);background:rgba(255,255,255,.10)}
 select option{background:#0f2237;color:#fff}
 textarea{resize:vertical;min-height:88px}
 .submit{
   width:100%;margin-top:8px;background:var(--gold-grad);color:#fff;
   padding:13px;border:none;border-radius:8px;font-size:14.5px;font-weight:600;
   cursor:pointer;font-family:"PingFang SC",sans-serif;letter-spacing:.6px;
-  transition:all .22s;box-shadow:0 6px 20px rgba(167,122,63,.30);
+  transition:all .22s;box-shadow:0 6px 20px rgba(21,135,163,.30);
 }
-.submit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(167,122,63,.40)}
+.submit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(21,135,163,.40)}
 .form-note{font-size:11px;color:#7d8d9d;text-align:center;margin-top:14px;font-family:"PingFang SC",sans-serif;line-height:1.7}
 .direct-line{
   margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.10);
@@ -470,14 +474,14 @@ textarea{resize:vertical;min-height:88px}
 }
 .direct-line > span{margin-right:2px}
 .direct-line a{
-  color:var(--gold-l);border:1px solid rgba(217,179,130,.35);
+  color:var(--gold-l);border:1px solid rgba(127,211,227,.35);
   padding:4px 10px;border-radius:5px;font-size:12px;
   transition:background .2s,border-color .2s;
 }
-.direct-line a:hover{background:rgba(217,179,130,.14);border-color:rgba(217,179,130,.6)}
+.direct-line a:hover{background:rgba(127,211,227,.14);border-color:rgba(127,211,227,.6)}
 .ok-msg{
-  display:none;background:rgba(183,138,76,.14);border:1px solid rgba(183,138,76,.4);
-  border-radius:8px;padding:14px;font-size:13.5px;color:#e8d6b8;text-align:center;
+  display:none;background:rgba(26,155,181,.14);border:1px solid rgba(26,155,181,.4);
+  border-radius:8px;padding:14px;font-size:13.5px;color:#b9e2ec;text-align:center;
   margin-top:14px;font-family:"PingFang SC",sans-serif;
 }
 
@@ -527,7 +531,7 @@ footer{background:#07111c;color:#7d8b9a;padding:56px 0 0;font-family:"PingFang S
   background:linear-gradient(160deg,#12263c 0%,#0a1828 100%);
   border-radius:14px;padding:22px 20px;margin-bottom:20px;position:relative;overflow:hidden;
 }
-.sm-wx::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;top:-90px;right:-60px;background:radial-gradient(circle,rgba(183,138,76,.38),transparent 70%)}
+.sm-wx::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;top:-90px;right:-60px;background:radial-gradient(circle,rgba(26,155,181,.38),transparent 70%)}
 .sm-wx-label{font-size:11px;letter-spacing:2.2px;color:var(--gold-l);margin-bottom:8px;position:relative;font-family:"PingFang SC",sans-serif}
 .sm-wx-id{
   font-size:26px;font-weight:700;color:#fff;letter-spacing:1.6px;margin-bottom:16px;
@@ -538,14 +542,14 @@ footer{background:#07111c;color:#7d8b9a;padding:56px 0 0;font-family:"PingFang S
   display:inline-flex;align-items:center;gap:7px;background:var(--gold-grad);color:#fff;border:none;
   padding:10px 22px;border-radius:8px;font-size:13.5px;font-weight:600;cursor:pointer;
   font-family:"PingFang SC",sans-serif;transition:transform .18s,box-shadow .2s;position:relative;
-  box-shadow:0 4px 16px rgba(167,122,63,.35);
+  box-shadow:0 4px 16px rgba(21,135,163,.35);
 }
-.sm-wx-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(167,122,63,.45)}
+.sm-wx-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(21,135,163,.45)}
 .sm-wx-btn svg{width:15px;height:15px}
 .sm-steps{display:flex;justify-content:space-between;gap:8px;margin-bottom:22px}
 .sm-step{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px}
 .sm-step b{
-  width:24px;height:24px;border-radius:50%;background:#f6f0e4;color:#a87a3f;
+  width:24px;height:24px;border-radius:50%;background:#e8f4f7;color:#1587a3;
   display:grid;place-items:center;font-size:11.5px;font-weight:700;
   font-family:"PingFang SC",sans-serif;
 }
@@ -627,7 +631,41 @@ body.sm-open{overflow:hidden}
 <header>
   <div class="wrap nav">
     <a href="#" class="brand">
-      <div class="logo">贝</div>
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="shellG" x1="8" y1="6" x2="32" y2="24" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#8FE3F0"/>
+              <stop offset="0.55" stop-color="#3FBED6"/>
+              <stop offset="1" stop-color="#1A9BB5"/>
+            </linearGradient>
+            <linearGradient id="waveG" x1="0" y1="28" x2="40" y2="34" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#7FD3E3" stop-opacity="0.95"/>
+              <stop offset="1" stop-color="#2BB3CC" stop-opacity="0.75"/>
+            </linearGradient>
+          </defs>
+          <!-- 贝壳主体 -->
+          <path d="M20 4.6c-6.4 0-11.6 4.9-12.6 11.2-.1.6.4 1.1 1 1.1h23.2c.6 0 1.1-.5 1-1.1C31.6 9.5 26.4 4.6 20 4.6Z" fill="url(#shellG)"/>
+          <!-- 贝壳放射纹 -->
+          <g stroke="#0A2840" stroke-width="1.05" stroke-linecap="round" opacity="0.42">
+            <path d="M20 5.4v11.2"/>
+            <path d="M14.6 6.8 17.4 16"/>
+            <path d="M25.4 6.8 22.6 16"/>
+            <path d="M9.9 10.2 15.3 16.6"/>
+            <path d="M30.1 10.2 24.7 16.6"/>
+            <path d="M7.6 15.4 13.6 16.9"/>
+            <path d="M32.4 15.4 26.4 16.9"/>
+          </g>
+          <!-- 贝壳底座 -->
+          <path d="M7.4 16.9h25.2l-1.9 2.1H9.3L7.4 16.9Z" fill="#0A2840" opacity="0.5"/>
+          <!-- 海浪 1 -->
+          <path d="M3.4 26.2c2.6-2.1 5.2-2.1 7.8 0 2.6 2.1 5.2 2.1 7.8 0 2.6-2.1 5.2-2.1 7.8 0 2.6 2.1 5.2 2.1 7.8 0"
+                stroke="url(#waveG)" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- 海浪 2 -->
+          <path d="M5.6 31.6c2.3-1.8 4.6-1.8 6.9 0 2.3 1.8 4.6 1.8 6.9 0 2.3-1.8 4.6-1.8 6.9 0 2.3 1.8 4.6 1.8 6.9 0"
+                stroke="#3FBED6" stroke-width="1.9" stroke-linecap="round" opacity="0.62"/>
+        </svg>
+      </div>
       <div class="brand-txt">
         <b>贝海国际秘书服务有限公司</b>
         <span>BEIHAI · INTERNATIONAL CORPORATE SERVICES</span>
@@ -656,7 +694,7 @@ body.sm-open{overflow:hidden}
       <h1>注册一家港澳公司，<br>不只是拿到一张<em>公司执照</em></h1>
       <p class="lead">
         公司注册只是起点。<b>银行开户、税务合规、资金安排、资产配置</b>，
-        每一步都决定这家境外公司是否真正可用。我们用十二年港澳落地经验，
+        每一步都决定这家境外公司是否真正可用。我们用八年港澳落地经验，
         把「注册」做成一条能走通、能运转、能长大的路。
       </p>
       <div class="hero-btns">
