@@ -593,6 +593,50 @@ footer{background:#07111c;color:#7d8b9a;padding:56px 0 0;font-family:"PingFang S
 .sm-later:hover{color:#5f6c7a}
 body.sm-open{overflow:hidden}
 
+/* ---------- BANKS ---------- */
+#banks{background:#fff;padding:88px 0}
+.bank-cols{display:grid;grid-template-columns:1.16fr .84fr;gap:24px}
+.bank-col{
+  background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 28px;transition:box-shadow .3s,border-color .3s;
+}
+.bank-col:hover{box-shadow:var(--shadow-md);border-color:#b9dbe4}
+.bank-head{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:18px;border-bottom:1px dashed #d3e5ea}
+.bank-flag{
+  width:42px;height:30px;border-radius:4px;display:grid;place-items:center;
+  background:#fff;border:1px solid #e3eef1;flex:0 0 42px;overflow:hidden;
+}
+.bank-flag i{width:32px;height:22px;border-radius:2px}
+.bank-head h3{font-size:18px;color:var(--navy);font-weight:700;letter-spacing:.3px;line-height:1.4}
+.bank-head span{font-size:10.5px;color:var(--muted);font-family:"PingFang SC",sans-serif;letter-spacing:1.4px}
+.bank-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bank-col:nth-child(2) .bank-grid{grid-template-columns:1fr}
+.bank-item{
+  display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  background:#fff;border:1px solid #e4eef2;border-radius:8px;
+  padding:11px 13px;font-size:13.5px;color:#26374a;
+  font-family:"PingFang SC",sans-serif;font-weight:500;
+  transition:border-color .22s,transform .22s,box-shadow .22s;
+}
+.bank-item:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 14px rgba(26,155,181,.13)}
+.bank-item .dot{
+  width:6px;height:6px;border-radius:50%;background:var(--gold);flex:0 0 6px;
+  box-shadow:0 0 0 3px rgba(26,155,181,.14);
+}
+.bank-item em{
+  font-style:normal;font-size:10.5px;color:#8ea4b2;letter-spacing:.3px;
+  font-family:"PingFang SC",sans-serif;margin-left:auto;
+}
+.bank-note{
+  display:flex;gap:14px;align-items:flex-start;margin-top:26px;
+  background:#f5fbfc;border:1px solid #d9ecf1;border-left:3px solid var(--gold);
+  border-radius:0 10px 10px 0;padding:18px 22px;
+}
+.bn-icon{color:var(--gold);flex:0 0 20px;margin-top:1px}
+.bn-icon svg{width:20px;height:20px}
+.bank-note b{display:block;font-size:13.5px;color:var(--navy);margin-bottom:5px;font-family:"PingFang SC",sans-serif}
+.bank-note p{font-size:12.8px;color:#5f6c7a;line-height:1.85;font-family:"PingFang SC",sans-serif}
+
 /* ---------- REVEAL ---------- */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
 .reveal.in{opacity:1;transform:none}
@@ -606,6 +650,7 @@ body.sm-open{overflow:hidden}
   .steps::before{display:none}
   .adv-layout,.contact-grid{grid-template-columns:1fr;gap:44px}
   .case-grid,.coop-grid{grid-template-columns:1fr 1fr}
+  .bank-cols{grid-template-columns:1fr}
   .f-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
@@ -616,6 +661,8 @@ body.sm-open{overflow:hidden}
   .hero-stats{grid-template-columns:repeat(3,1fr);gap:0}
   .hero-stats b{font-size:24px}
   .svc-grid,.case-grid,.coop-grid{grid-template-columns:1fr}
+  .bank-grid{grid-template-columns:1fr}
+  .bank-col:nth-child(2) .bank-grid{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr;gap:30px 0}
   .f-row{grid-template-columns:1fr}
@@ -642,6 +689,7 @@ body.sm-open{overflow:hidden}
     </a>
     <nav class="links">
       <a href="#services">核心服务</a>
+      <a href="#banks">合作银行</a>
       <a href="#why">为何选择</a>
       <a href="#process">服务流程</a>
       <a href="#advice">理财与保障</a>
@@ -791,6 +839,69 @@ body.sm-open{overflow:hidden}
           <li>保单条款逐项解读与风险提示</li>
           <li>理赔流程协助与保单年检</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANKS -->
+<section id="banks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">PARTNER BANKS</div>
+      <h2>合作开户银行网络</h2>
+      <p>开户成败，很大程度取决于「选对银行」。我们与以下机构长期对接，熟悉各家的审查偏好、所需文件与审批节奏，能按你的业务类型匹配最合适的一家，而不是盲目投递。</p>
+    </div>
+
+    <div class="bank-cols">
+      <div class="bank-col reveal">
+        <div class="bank-head">
+          <div class="bank-flag f-hk-badge"><i class="f-hk"></i></div>
+          <div>
+            <h3>香港合作银行</h3>
+            <span>HONG KONG · 10 家</span>
+          </div>
+        </div>
+        <div class="bank-grid">
+          <div class="bank-item"><span class="dot"></span>华侨银行<em>OCBC</em></div>
+          <div class="bank-item"><span class="dot"></span>星展银行<em>DBS</em></div>
+          <div class="bank-item"><span class="dot"></span>渣打银行<em>Standard Chartered</em></div>
+          <div class="bank-item"><span class="dot"></span>东亚银行<em>Bank of East Asia</em></div>
+          <div class="bank-item"><span class="dot"></span>大新银行<em>Dah Sing</em></div>
+          <div class="bank-item"><span class="dot"></span>集友银行<em>Chiyu</em></div>
+          <div class="bank-item"><span class="dot"></span>富邦银行<em>Fubon</em></div>
+          <div class="bank-item"><span class="dot"></span>建设银行（亚洲）<em>CCB Asia</em></div>
+          <div class="bank-item"><span class="dot"></span>中国银行（香港）<em>BOCHK</em></div>
+          <div class="bank-item"><span class="dot"></span>南洋商业银行<em>Nanyang Commercial</em></div>
+        </div>
+      </div>
+
+      <div class="bank-col reveal">
+        <div class="bank-head">
+          <div class="bank-flag"><i class="f-mo"></i></div>
+          <div>
+            <h3>澳门合作银行</h3>
+            <span>MACAU · 6 家</span>
+          </div>
+        </div>
+        <div class="bank-grid">
+          <div class="bank-item"><span class="dot"></span>中国银行（澳门）<em>Bank of China Macau</em></div>
+          <div class="bank-item"><span class="dot"></span>建设银行（澳门）<em>CCB Macau</em></div>
+          <div class="bank-item"><span class="dot"></span>广发银行（澳门）<em>CGB Macau</em></div>
+          <div class="bank-item"><span class="dot"></span>澳门发展银行<em>Macau Development Bank</em></div>
+          <div class="bank-item"><span class="dot"></span>大丰银行<em>Tai Fung</em></div>
+          <div class="bank-item"><span class="dot"></span>立桥银行<em>Lisboa</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bank-note reveal">
+      <div class="bn-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <b>关于开户结果</b>
+        <p>银行是否批核、批核何种账户类型，最终由各银行按其内部政策及合规审查独立决定。我们负责事前评估、文件准备、业务说明撰写与面签安排，会如实告知个案的可行性，但不承诺任何开户结果。</p>
       </div>
     </div>
   </div>
