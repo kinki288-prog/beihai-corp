@@ -550,12 +550,36 @@ footer{background:#07111c;color:#7d8b9a;padding:56px 0 0;font-family:"PingFang S
   font-family:"PingFang SC",sans-serif;
 }
 .sm-step span{font-size:11.5px;color:#6b7785;line-height:1.5;font-family:"PingFang SC",sans-serif}
-.sm-wa{
-  display:block;font-size:12.8px;color:#3c8c5a;text-decoration:none;
-  padding:11px;border:1px solid #d9e8dd;border-radius:9px;background:#f5faf6;
-  transition:background .2s,border-color .2s;font-family:"PingFang SC",sans-serif;
+.sm-wa-main{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  background:linear-gradient(135deg,#25D366 0%,#1da851 100%);color:#fff;
+  padding:14px 20px;border-radius:10px;font-size:15px;font-weight:700;
+  text-decoration:none;font-family:"PingFang SC",sans-serif;letter-spacing:.3px;
+  box-shadow:0 6px 20px rgba(37,211,102,.32);
+  transition:transform .18s,box-shadow .22s;
 }
-.sm-wa:hover{background:#ecf6ef;border-color:#b8d9c3}
+.sm-wa-main:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,.42)}
+.sm-wa-main svg{width:20px;height:20px}
+.sm-wa-note{
+  font-size:11.5px;color:#9aa6b2;margin-top:9px;
+  font-family:"PingFang SC",sans-serif;
+}
+.sm-divider{
+  display:flex;align-items:center;gap:12px;
+  margin:22px 0 16px;color:#b3bcc6;font-size:11.5px;
+  font-family:"PingFang SC",sans-serif;
+}
+.sm-divider::before,.sm-divider::after{
+  content:"";flex:1;height:1px;background:#eae5dc;
+}
+.sm-summary{
+  display:none;margin-top:18px;padding:13px 15px;border-radius:9px;
+  background:#faf8f4;border:1px solid #eee7da;text-align:left;
+  font-size:11.8px;color:#6b7785;line-height:1.85;
+  font-family:"PingFang SC",sans-serif;
+}
+.sm-summary.show{display:block}
+.sm-summary b{color:var(--navy);display:block;margin-bottom:6px;font-size:12px}
 .sm-later{
   display:block;width:100%;margin-top:14px;background:none;border:none;
   font-size:12.5px;color:#9aa6b2;cursor:pointer;padding:6px;
@@ -1172,7 +1196,15 @@ body.sm-open{overflow:hidden}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
     <h3 id="smTitle">已收到你的资料</h3>
-    <p class="sm-sub">我们会在<strong>一个工作日内</strong>与你联系。<br>想更快得到回复？现在就加我微信。</p>
+    <p class="sm-sub">想<strong>立刻</strong>得到回复？点下面按钮，<br>你的联络资料会自动带到我手机上。</p>
+
+    <a class="sm-wa-main" id="smWaBtn" href="https://wa.me/85366866986" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.6-.5h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.4.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.3c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3c-.8-1.3-1.3-2.9-1.3-4.4 0-4.5 3.7-8.2 8.2-8.2s8.2 3.7 8.2 8.2-3.7 8.3-8.2 8.3z"/></svg>
+      用 WhatsApp 直接发给我
+    </a>
+    <div class="sm-wa-note">+853 6686 6986 · 点击后资料自动填入对话</div>
+
+    <div class="sm-divider"><span>或加微信</span></div>
 
     <div class="sm-wx">
       <div class="sm-wx-label">微信号</div>
@@ -1185,13 +1217,11 @@ body.sm-open{overflow:hidden}
 
     <div class="sm-steps">
       <div class="sm-step"><b>1</b><span>复制上方微信号</span></div>
-      <div class="sm-step"><b>2</b><span>打开微信「添加朋友」搜索</span></div>
-      <div class="sm-step"><b>3</b><span>发送「公司注册」，优先安排</span></div>
+      <div class="sm-step"><b>2</b><span>微信「添加朋友」搜索</span></div>
+      <div class="sm-step"><b>3</b><span>发「公司注册」优先安排</span></div>
     </div>
 
-    <a class="sm-wa" href="https://wa.me/85366866986" target="_blank" rel="noopener">
-      或通过 WhatsApp 联系 +853 6686 6986
-    </a>
+    <div class="sm-summary" id="smSummary"></div>
     <button class="sm-later" data-close>稍后再说</button>
   </div>
 </div>
@@ -1321,18 +1351,53 @@ if(leadForm){
 
     e.preventDefault();  // 阻止跳转，改用 AJAX 提交
 
+    // 先取出客户填写的内容，用于拼装 WhatsApp 消息
+    var v = function(sel){
+      var el = leadForm.querySelector(sel);
+      return el ? el.value.trim() : '';
+    };
+    var info = {
+      name:  v('input[name="称呼"]'),
+      phone: v('input[name="联络电话"]'),
+      wx:    v('input[name="微信或WhatsApp"]'),
+      city:  v('input[name="所在城市"]'),
+      item:  v('select[name="咨询项目"]'),
+      note:  v('textarea[name="情况简述"]')
+    };
+    buildWhatsApp(info);
+
     var data = new FormData(leadForm);
     fetch(leadForm.action, {
       method: 'POST',
       body: data,
       headers: { 'Accept': 'application/json' }
-    }).then(function(res){
-      openModal();
-    }).catch(function(){
-      // 网络异常也展示弹层，避免客户以为没提交成功
-      openModal();
-    });
+    }).then(function(){ openModal(); })
+      .catch(function(){ openModal(); });
   });
+}
+
+// ---------- 拼装 WhatsApp 消息 ----------
+function buildWhatsApp(info){
+  var lines = ['你好，我在贝海国际官网提交了咨询：'];
+  if(info.name)  lines.push('称呼：' + info.name);
+  if(info.phone) lines.push('电话：' + info.phone);
+  if(info.wx)    lines.push('微信/WhatsApp：' + info.wx);
+  if(info.city)  lines.push('城市：' + info.city);
+  if(info.item)  lines.push('想了解：' + info.item);
+  if(info.note)  lines.push('情况：' + info.note);
+
+  var url = 'https://wa.me/85366866986?text=' + encodeURIComponent(lines.join('\n'));
+
+  var a = document.getElementById('smWaBtn');
+  if(a) a.href = url;
+
+  // 在弹层底部展示一份摘要，让客户确认已填写的内容
+  var box = document.getElementById('smSummary');
+  if(box){
+    var esc = function(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
+    box.innerHTML = '<b>你提交的资料</b>' + lines.slice(1).map(esc).join('<br>');
+    box.classList.add('show');
+  }
 }
 
 // 若 FormSubmit 仍跳转回来（?sent=1），也展示弹层
