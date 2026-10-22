@@ -499,6 +499,71 @@ footer{background:#07111c;color:#7d8b9a;padding:56px 0 0;font-family:"PingFang S
   font-size:11.4px;line-height:1.85;color:#63707e;
 }
 
+/* ---------- SUCCESS MODAL ---------- */
+.success-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.success-modal.show{display:flex}
+.sm-backdrop{position:absolute;inset:0;background:rgba(6,14,24,.72);backdrop-filter:blur(6px);animation:smFade .25s ease}
+.sm-panel{
+  position:relative;background:#fff;border-radius:20px;padding:38px 32px 26px;
+  max-width:420px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(6,14,24,.40);
+  animation:smUp .38s cubic-bezier(.2,.8,.3,1);max-height:92vh;overflow-y:auto;
+}
+@keyframes smFade{from{opacity:0}to{opacity:1}}
+@keyframes smUp{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
+.sm-close{
+  position:absolute;top:12px;right:14px;width:32px;height:32px;border:none;background:none;
+  font-size:24px;line-height:1;color:#9aa6b2;cursor:pointer;border-radius:8px;transition:background .2s,color .2s;
+}
+.sm-close:hover{background:#f2f0eb;color:#33414f}
+.sm-icon{
+  width:56px;height:56px;border-radius:50%;background:#ecf4ec;color:#3c8c5a;
+  display:grid;place-items:center;margin:0 auto 18px;
+}
+.sm-icon svg{width:28px;height:28px}
+.sm-panel h3{font-size:22px;color:var(--navy);margin-bottom:10px;font-weight:700;letter-spacing:.3px}
+.sm-sub{font-size:13.8px;color:#5f6c7a;line-height:1.85;margin-bottom:24px;font-family:"PingFang SC",sans-serif}
+.sm-sub strong{color:var(--navy)}
+.sm-wx{
+  background:linear-gradient(160deg,#12263c 0%,#0a1828 100%);
+  border-radius:14px;padding:22px 20px;margin-bottom:20px;position:relative;overflow:hidden;
+}
+.sm-wx::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;top:-90px;right:-60px;background:radial-gradient(circle,rgba(183,138,76,.38),transparent 70%)}
+.sm-wx-label{font-size:11px;letter-spacing:2.2px;color:var(--gold-l);margin-bottom:8px;position:relative;font-family:"PingFang SC",sans-serif}
+.sm-wx-id{
+  font-size:26px;font-weight:700;color:#fff;letter-spacing:1.6px;margin-bottom:16px;
+  font-family:"PingFang SC",sans-serif;position:relative;
+  -webkit-user-select:all;user-select:all;
+}
+.sm-wx-btn{
+  display:inline-flex;align-items:center;gap:7px;background:var(--gold-grad);color:#fff;border:none;
+  padding:10px 22px;border-radius:8px;font-size:13.5px;font-weight:600;cursor:pointer;
+  font-family:"PingFang SC",sans-serif;transition:transform .18s,box-shadow .2s;position:relative;
+  box-shadow:0 4px 16px rgba(167,122,63,.35);
+}
+.sm-wx-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(167,122,63,.45)}
+.sm-wx-btn svg{width:15px;height:15px}
+.sm-steps{display:flex;justify-content:space-between;gap:8px;margin-bottom:22px}
+.sm-step{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px}
+.sm-step b{
+  width:24px;height:24px;border-radius:50%;background:#f6f0e4;color:#a87a3f;
+  display:grid;place-items:center;font-size:11.5px;font-weight:700;
+  font-family:"PingFang SC",sans-serif;
+}
+.sm-step span{font-size:11.5px;color:#6b7785;line-height:1.5;font-family:"PingFang SC",sans-serif}
+.sm-wa{
+  display:block;font-size:12.8px;color:#3c8c5a;text-decoration:none;
+  padding:11px;border:1px solid #d9e8dd;border-radius:9px;background:#f5faf6;
+  transition:background .2s,border-color .2s;font-family:"PingFang SC",sans-serif;
+}
+.sm-wa:hover{background:#ecf6ef;border-color:#b8d9c3}
+.sm-later{
+  display:block;width:100%;margin-top:14px;background:none;border:none;
+  font-size:12.5px;color:#9aa6b2;cursor:pointer;padding:6px;
+  font-family:"PingFang SC",sans-serif;transition:color .2s;
+}
+.sm-later:hover{color:#5f6c7a}
+body.sm-open{overflow:hidden}
+
 /* ---------- REVEAL ---------- */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
 .reveal.in{opacity:1;transform:none}
@@ -1098,6 +1163,39 @@ footer{background:#07111c;color:#7d8b9a;padding:56px 0 0;font-family:"PingFang S
   </div>
 </section>
 
+<!-- 提交成功弹层：引导客户加微信 -->
+<div class="success-modal" id="successModal" aria-hidden="true">
+  <div class="sm-backdrop" data-close></div>
+  <div class="sm-panel" role="dialog" aria-modal="true" aria-labelledby="smTitle">
+    <button class="sm-close" aria-label="关闭" data-close>&times;</button>
+    <div class="sm-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3 id="smTitle">已收到你的资料</h3>
+    <p class="sm-sub">我们会在<strong>一个工作日内</strong>与你联系。<br>想更快得到回复？现在就加我微信。</p>
+
+    <div class="sm-wx">
+      <div class="sm-wx-label">微信号</div>
+      <div class="sm-wx-id">Zzkk240724</div>
+      <button class="sm-wx-btn" id="smCopy" data-wx="Zzkk240724">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+        复制微信号
+      </button>
+    </div>
+
+    <div class="sm-steps">
+      <div class="sm-step"><b>1</b><span>复制上方微信号</span></div>
+      <div class="sm-step"><b>2</b><span>打开微信「添加朋友」搜索</span></div>
+      <div class="sm-step"><b>3</b><span>发送「公司注册」，优先安排</span></div>
+    </div>
+
+    <a class="sm-wa" href="https://wa.me/85366866986" target="_blank" rel="noopener">
+      或通过 WhatsApp 联系 +853 6686 6986
+    </a>
+    <button class="sm-later" data-close>稍后再说</button>
+  </div>
+</div>
+
 <footer>
   <div class="wrap">
     <div class="f-grid">
@@ -1181,30 +1279,92 @@ document.querySelectorAll('.wx-copy').forEach(function(el){
   });
 });
 
-// Form：真实提交到 FormSubmit，仅做重复点击防护
-document.getElementById('leadForm').addEventListener('submit', function(){
-  var btn = this.querySelector('.submit');
-  btn.textContent = '正在提交…';
-  btn.style.opacity = '.7';
-  btn.style.pointerEvents = 'none';
-  setTimeout(function(){
-    btn.textContent = '提交，预约顾问';
-    btn.style.opacity = '';
-    btn.style.pointerEvents = '';
-  }, 12000);
-});
+// ---------- 提交成功弹层 ----------
+var modal = document.getElementById('successModal');
+function openModal(){
+  if(!modal) return;
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden','false');
+  document.body.classList.add('sm-open');
+  var closeBtn = modal.querySelector('.sm-close');
+  if(closeBtn) closeBtn.focus();
+}
+function closeModal(){
+  if(!modal) return;
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('sm-open');
+}
+if(modal){
+  modal.querySelectorAll('[data-close]').forEach(function(el){
+    el.addEventListener('click', closeModal);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+  });
+}
 
-// 提交成功后从 ?sent=1 返回：展示成功提示并滚动到表单
+// ---------- 表单提交 ----------
+var leadForm = document.getElementById('leadForm');
+var submitted = false;
+
+if(leadForm){
+  leadForm.addEventListener('submit', function(e){
+    // 防止重复提交
+    if(submitted){ e.preventDefault(); return; }
+    submitted = true;
+
+    var btn = leadForm.querySelector('.submit');
+    btn.textContent = '正在提交…';
+    btn.style.opacity = '.7';
+    btn.style.pointerEvents = 'none';
+
+    e.preventDefault();  // 阻止跳转，改用 AJAX 提交
+
+    var data = new FormData(leadForm);
+    fetch(leadForm.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      openModal();
+    }).catch(function(){
+      // 网络异常也展示弹层，避免客户以为没提交成功
+      openModal();
+    });
+  });
+}
+
+// 若 FormSubmit 仍跳转回来（?sent=1），也展示弹层
 (function(){
   if(new URLSearchParams(location.search).get('sent') === '1'){
-    var ok = document.getElementById('okMsg');
-    var form = document.getElementById('leadForm');
-    if(ok && form){
-      ok.style.display = 'block';
-      ok.textContent = '提交成功！我们已收到你的资料，会在一个工作日内与你联系。';
-      setTimeout(function(){ form.scrollIntoView({behavior:'smooth', block:'center'}); }, 300);
-    }
+    setTimeout(openModal, 300);
+    if(history.replaceState) history.replaceState(null,'',location.pathname);
   }
+})();
+
+// 弹层内的复制按钮
+(function(){
+  var btn = document.getElementById('smCopy');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var txt = btn.getAttribute('data-wx');
+    var original = btn.innerHTML;
+    function done(){
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 已复制，去微信添加';
+      setTimeout(function(){ btn.innerHTML = original; }, 2600);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(done).catch(fb);
+    } else { fb(); }
+    function fb(){
+      var ta=document.createElement('textarea'); ta.value=txt;
+      ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{document.execCommand('copy');}catch(e){}
+      document.body.removeChild(ta); done();
+    }
+  });
 })();
 </script>
 </body>
